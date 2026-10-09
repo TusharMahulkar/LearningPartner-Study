@@ -7,7 +7,7 @@ namespace FirstDemoWebAPI.Model
 
         [JsonPropertyName("Id")]
         public int Id { get; set; }
-
+         
        [JsonPropertyName("Name")]
         public string Employee_Name { get; set; }
         

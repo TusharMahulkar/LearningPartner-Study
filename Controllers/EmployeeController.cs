@@ -9,7 +9,7 @@ namespace FirstDemoWebAPI.Controllers
     public class EmployeeController : ControllerBase
     {
         EmployeeService service = new EmployeeService();
-
+         
 
         //api/Employee/all
         [HttpGet("allEmployeeList")]

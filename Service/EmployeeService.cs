@@ -6,7 +6,7 @@ namespace FirstDemoWebAPI.Service
     {
         List<EmployeeModel> employeeList = new List<EmployeeModel>();
         public EmployeeService()
-        {
+        { 
             AllEmployee();
         }
 
