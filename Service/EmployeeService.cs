@@ -1,8 +1,10 @@
-﻿using FirstDemoWebAPI.Model;
+﻿using FirstDemoWebAPI.IInterface;
+using FirstDemoWebAPI.Model;
 
 namespace FirstDemoWebAPI.Service
 {
-    public class EmployeeService
+    //Bussiness ogic Implementation class 
+    public class EmployeeService : IEMployeeService
     {
         List<EmployeeModel> employeeList = new List<EmployeeModel>();
         public EmployeeService()
@@ -30,13 +32,11 @@ namespace FirstDemoWebAPI.Service
             return employeeList;
         }
 
-
         public List<EmployeeModel> AddEmployee(EmployeeModel emp)
         {             
             employeeList.Add(emp);
             return employeeList;
         }
-
 
         public EmployeeModel GetEmployeeById(int id)
         {

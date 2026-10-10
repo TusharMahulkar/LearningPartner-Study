@@ -1,4 +1,5 @@
-﻿using FirstDemoWebAPI.Model;
+﻿using FirstDemoWebAPI.IInterface;
+using FirstDemoWebAPI.Model;
 using FirstDemoWebAPI.Service;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,8 +9,15 @@ namespace FirstDemoWebAPI.Controllers
     [ApiController]
     public class EmployeeController : ControllerBase
     {
-        EmployeeService service = new EmployeeService();
-         
+        //EmployeeService service = new EmployeeService();
+
+        private IEMployeeService service;
+
+        public EmployeeController(IEMployeeService empService)
+        {
+            this.service = empService;
+        }
+
 
         //api/Employee/all
         [HttpGet("allEmployeeList")]
@@ -24,6 +32,7 @@ namespace FirstDemoWebAPI.Controllers
         {
             return service.AddEmployee(empData);
         }
+
 
         [HttpGet("UserId")]
         public EmployeeModel GetById(int id)
